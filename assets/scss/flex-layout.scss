@@ -1,0 +1,174 @@
+.flex {
+  display: flex;
+}
+
+//
+@for $i from 1 through 12 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+  //order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+  .flex-order-#{$i}{
+    flex-order: $i;
+  }
+
+  //flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+  //如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+  .flex-grow-#{$i}{
+    flex-grow: $i;
+  }
+
+  //flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+  //如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩
+  .flex-shrink-#{$i}{
+    flex-shrink: $i;
+  }
+
+  //flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+  .flex-basis-#{$i}{
+    flex-basis: $i;
+  }
+
+}
+
+
+
+//主轴为垂直方向，起点在上沿。
+.flex-d-column {
+  flex-direction: column;
+}
+
+//主轴为垂直方向，起点在下沿。
+.flex-d-column-reverse {
+  flex-direction: column-reverse;
+}
+
+//主轴为水平方向，起点在左端。
+.flex-d-row {
+  flex-direction: row;
+}
+
+//主轴为水平方向，起点在右端。
+.flex-d-row-reverse {
+  flex-direction: row-reverse;
+}
+
+//换行，第一行在上方。
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+//不换行
+.flex-wrap-nowrap{
+  flex-wrap: wrap-reverse;
+}
+
+//换行，第一行在下方
+.flex-wrap{
+  flex-wrap: nowrap;
+}
+
+//左对齐
+.justify-start{
+  justify-content: flex-start;
+}
+
+//右对齐
+.justify-end{
+  justify-content: flex-end;
+}
+
+//居中
+.justify-center{
+  justify-content: center;
+}
+
+//两端对齐，项目之间的间隔都相等。
+.justify-between{
+  justify-content: space-between;
+}
+
+//每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+.justify-around{
+  justify-content: space-around;
+}
+
+//交叉轴的起点对齐
+.align-start{
+  align-items: flex-start;
+}
+
+//交叉轴的终点对齐
+.align-end{
+  align-items: flex-end;
+}
+
+//交叉轴的中点对齐
+.align-center{
+  align-items: center;
+}
+
+//项目的第一行文字的基线对齐
+.align-baseline{
+  align-items: baseline;
+}
+
+//如果项目未设置高度或设为auto，将占满整个容器的高度
+.align-stretch{
+  align-items: stretch;
+}
+
+//属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+//与交叉轴的起点对齐
+.content-start{
+  align-content: flex-start;
+}
+
+//与交叉轴的终点对齐
+.content-end{
+  align-content: flex-end;
+}
+
+//与交叉轴的中点对齐
+.content-center{
+  align-content: center;
+}
+
+//与交叉轴两端对齐，轴线之间的间隔平均分布
+.content-space-between{
+  align-content: space-between;
+}
+
+//每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+.content-space-around{
+  align-content: space-around;
+}
+
+//轴线占满整个交叉轴
+.content-stretch{
+  align-content: stretch;
+}
+
+//align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+.align-self-start{
+  align-self: flex-start;
+}
+
+.align-self-end{
+  align-self: flex-end;
+}
+.align-self-center{
+  align-self: center;
+}
+
+.align-self-baseline{
+  align-self: baseline;
+}
+
+.align-self-stretch{
+  align-self: stretch;
+}
+
+
+
+

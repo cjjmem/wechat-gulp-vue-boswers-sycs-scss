@@ -1,0 +1,12 @@
+$colorlist: (grey: "#2b2b9ce", green: #76dcd8, blue: #80d1ff, yellow: #f9e993, purple: #cec2ed, pink: #f1adc3, orange: #f8c0a9, while: #FFFFFF, brown: #FF9547, darkgreen: #19a29c );
+@each $name, $color in $colorlist {
+  .#{$name} {
+    color:$color !important;
+  }
+  .#{$name}bg {
+    background-color: $color !important;
+  }
+  .#{$name}border {
+    border-color: $color !important;
+  }
+}

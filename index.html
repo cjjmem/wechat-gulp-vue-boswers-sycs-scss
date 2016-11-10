@@ -7,9 +7,16 @@
 <link rel="stylesheet" href="assets/css/screen.css" />
 
 <body>
-<div class="container" >
-  <div class="row clearfix">
-    <div class="col-md-6 column">
+<div class="container" id="wechat-menu">
+  <div class="row clearfix wechat-menu">
+    <div class="col-md-6 column ">
+
+      <div class="flex express align-end">
+        <div class="child-menu flex flex-1 justify-center">官网</div>
+        <div class="child-menu flex flex-1 justify-center">双向回拨</div>
+        <div class="child-menu flex flex-1 justify-center">语音验证</div>
+      </div>
+
     </div>
     <div class="col-md-6 column">
     </div>
@@ -18,6 +25,16 @@
 
 </body>
 <script src="node_modules/vue/dist/vue.js"></script>
-<script src="assets/js/menu.js"></script>
+
+<script>
+  var menu = new Vue({
+    el:'#wechat-menu',
+    methods:{
+      test:function () {
+      
+      }
+    }
+  })
+</script>
 
 </html>

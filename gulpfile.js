@@ -4,12 +4,9 @@ var minify = require('gulp-minify-css')
 
 
 gulp.task('default',function(){
-
   return gulp.src('assets/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(minify())
+    //.pipe(minify())
     .pipe(gulp.dest('assets/css'));
-
-
 })
 
