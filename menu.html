@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <style type="text/css">
+    #menu
+    {
+      margin-top: 300px;
+      width: 600px;
+      font-family: Arial;
+      font-size: 15px;
+    }
+    #menu ul
+    {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      position: relative;
+    }
+    #menu ul li
+    {
+      list-style-type: none;
+      float: left;
+      height: 25px;
+      width: 120px;
+      line-height: 25px;
+      text-align: center;
+      background: #000;
+      color: #fff;
+    }
+    #menu ul li ul
+    {
+      display: list-item;
+      margin: 0;
+      bottom:130px;
+      position: relative;
+      right: 40px;
+      font-size: 12px;
+    }
+    #menu ul li a
+    {
+      text-decoration: none;
+      color: #ffffff;
+    }
+    #menu ul li:hover
+    {
+      background: #686868;
+      color: #000;
+      cursor: pointer;
+    }
+    #menu ul li:hover ul
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    #menu ul li:hover ul li:hover
+    {
+      background: #868686;
+      color: #ff5588;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div id="menu">
+  <ul>
+    <li><a target="_blank">菜单1</a>
+      <ul>
+        <li><a  target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        </li>
+      </ul>
+    </li>
+    <li><a target="_blank">菜单2</a>
+      <ul>
+        <li><a  target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+      </ul>
+    </li>
+    <li><a  target="_blank">菜单3</a>
+      <ul>
+        <li><a  target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+        <li><a target="_blank">Sub-Category</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+</body>
+</html>

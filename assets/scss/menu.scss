@@ -1,26 +1,74 @@
 
 //使用flex布局
-.wechat-menu{
+.flex-center{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
 
-  .express{
+.wechat-menu{
+  color:#666;
+
+  .menu-tool{
+    padding: 10px 0 50px 0;
+    border: 1px solid #000;
   }
 
-  .main-menu{
-    border: 1px solid #000;
-    span{
-      border-right:1px solid #000 ;
-      &:nth-last-child(1){
-        border-right:transparent;
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu-box{
+    padding: 20px;
+  }
+
+  .main-menu {
+    a {
+      border: 1px solid #dfdfdf;
+      border-right: transparent;
+      padding: 10px;
+      color:#666;
+      box-shadow:0px 1px 1px #dbdbdb;
+      &:hover{
+        background: #5bc0de;
+        color:#FFF;
+        cursor: move;
       }
     }
-  }
 
+  }
+  .main-menu:nth-last-child(1){
+    a{
+      border-right: 1px solid #dfdfdf;
+    }
+  }
   .sub-menu{
+    border: 1px solid #dfdfdf;
+    border-bottom: transparent;
+    width: 65%;
+    border-radius: 3px;
+    box-shadow:0px 1px 3px #dbdbdb;
+    margin: 3px auto;
+    span{
+      padding: 8px;
+      border-bottom: 1px solid #dfdfdf;
+    }
+    span:nth-last-child(1){
+      border-bottom: 0;
+    }
 
   }
-
-
 
 
 
 }
+
+

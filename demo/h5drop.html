@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+
+
+<style>
+  ul {
+    margin:20px auto;
+    width:800px;
+    zoom:1;
+  }
+  ul:after{
+    content:".";
+    display:block;
+    font-size:0;
+    line-height:0;
+    clear:both;
+    visibility:hidden;
+  }
+  li {
+    float:left;
+    text-align:center;
+    line-height:120px;
+    font-size:50px;
+    color:#F60;
+  }
+  .dragStart img{
+
+  }
+</style>
+
+<script>
+  var dragElements = document.querySelectorAll('#drag-elements li');
+
+  var elementDragged = null;
+
+  for (var i = 0; i < dragElements.length; i++) {
+
+    dragElements[i].addEventListener('dragstart', function (e) {
+      e.dataTransfer.setData('text', this.id);
+      elementDragged = this;
+    });
+
+    dragElements[i].addEventListener('dragend', function (e) {
+      elementDragged = null;
+    });
+
+    dragElements[i].addEventListener('dragover', function (e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      elementDragged.setAttribute('class', 'dragStart');
+      return false;
+    });
+
+    dragElements[i].addEventListener('dragenter', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.id != elementDragged.id) {
+        var tempInnerHtml = this.innerHTML;
+        this.innerHTML = elementDragged.innerHTML;
+        elementDragged.innerHTML = tempInnerHtml;
+        elementDragged.removeAttribute('class');
+        elementDragged = this;
+      }
+    });
+
+    dragElements[i].addEventListener('dragleave', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.id != elementDragged.id) {
+        this.removeAttribute('class');
+      }
+    });
+
+    dragElements[i].addEventListener('drop', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var targetId = e.dataTransfer.getData('text');
+      //测试用，可以用 e.dataTransfer 可以在被拖动元素与目标元素之间传送信息，chrome下暂时有bug，在dragover、dragleave、dragenter中无法获取
+      elementDragged.removeAttribute('class');
+      return false;
+    });
+
+  };
+</script>
+
+<body>
+
+<ul id="drag-elements">
+  <li id="A" draggable="true"><img src="assets/images/a01.jpg" alt="A" style="border: 3px solid #5bc0de" /></li>
+  <li id="B" draggable="true"><img src="assets/images/a01.jpg" alt="B" style="border: 3px solid #2e6da4" /></li>
+  <li id="C" draggable="true"><img src="assets/images/a01.jpg" alt="C" style="border: 3px solid #000000"/></li>
+  <li id="D" draggable="true"><img src="assets/images/a01.jpg"  alt="D" style="border: 3px solid #1b6d85" /></li>
+  <li id="E" draggable="true"><img src="assets/images/a01.jpg"  alt="E" style="border: 3px solid #3c763d"/></li>
+  <li id="F" draggable="true"><img src="assets/images/a01.jpg"  alt="F" style="border: 3px solid #d58512" /></li>
+</ul>
+
+</body>
+</html>

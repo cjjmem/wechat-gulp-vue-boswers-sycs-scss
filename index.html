@@ -9,39 +9,58 @@
 <body>
 <div class="container" id="wechat-menu">
   <div class="row clearfix wechat-menu">
-    <div class="col-md-6 column ">
+    <div class="col-md-4 column ">
+      <!--菜单展示-->
+      <div class="flex flex-1 express flex-d-column-reverse" >
+        <div class="menu-box flex flex-1 align-end" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-      <div class="flex flex-1 express  flex-d-column">
+          <!--菜单1-->
+          <div class="main-menu flex flex-1 flex-d-column-reverse" id="test-menu1" draggable="true" ondragstart="drag(event)" >
+            <a class="fist-menu justify-center flex-1 flex">官网</a>
+            <div class="sub-menu flex-d-column-reverse ">
+              <span class="second-menu flex-1 flex justify-center">测试3</span>
+              <span class="second-menu flex-1 flex justify-center" >测试1</span>
+              <span class="second-menu flex-1 flex justify-center">测试2</span>
+              <span class="second-menu flex-1 flex justify-center">测试3</span>
+            </div>
+          </div>
 
-        <div class="main-menu flex flex-1 align-end ">
-          <span class="flex flex-1 justify-center">官网</span>
-          <span class="flex flex-1 justify-center">双向回拨</span>
-          <span class="flex flex-1 justify-center">语音验证</span>
-        </div>
+          <!--菜单2-->
+          <div class="main-menu flex flex-1 flex-d-column-reverse" id="test-menu2" draggable="true" ondragstart="drag(event)"  >
+            <a class="fist-menu justify-center flex-1 flex ">双向回拨</a>
+            <div class="sub-menu  flex-d-column-reverse ">
+              <span class="second-menu flex-1 flex justify-center">测试1</span>
+              <span class="second-menu flex-1 flex justify-center">测试3</span>
+            </div>
+          </div>
 
-
-
-        <div class="sub-menu flex flex-1 ">
-          <div class="child">
-            <span>测试1</span>
-            <span>测试2</span>
-            <span>测试3</span>
+          <!--菜单3-->
+          <div class="main-menu flex flex-1 flex-d-column-reverse" id="test-menu3" draggable="true"  ondragstart="drag(event)" >
+              <a class="fist-menu justify-center flex-1 flex">语音验证</a>
+              <div class="sub-menu flex-d-column-reverse ">
+                <span class="second-menu flex-1 flex justify-center">测试1</span>
+                <span class="second-menu flex-1 flex justify-center">测试2</span>
+                <span class="second-menu flex-1 flex justify-center">测试3</span>
+              </div>
           </div>
         </div>
+      </div>
+
+    </div>
+    <div class="col-md-8 column flex flex-1 express flex-d-column-reverse"  id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <!--个性菜单-->
 
 
 
 
-
-
-
-
+      <!--设置菜单工具栏-->
+      <div class="menu-tool flex flex-1 flex-d-column">
+        <!--动作-->
 
 
       </div>
 
-    </div>
-    <div class="col-md-6 column">
+
     </div>
   </div>
 </div>
@@ -54,10 +73,40 @@
     el:'#wechat-menu',
     methods:{
       test:function () {
-
       }
     }
   })
+
+  function allowDrop(ev)
+  {
+    console.log("放到何处");
+     ev.preventDefault();
+  }
+
+  function drag(ev)
+  {
+    //console.info(ev);
+
+    ev.dataTransfer.setData("Text",ev.target.id);
+  }
+
+  function drop(ev)
+  {
+    ev.preventDefault();
+
+    var data=ev.dataTransfer.getData("Text");
+
+    //doucument.getElementById('test-menu').appendChild(document.getElementById(data));
+
+    ev.target.appendChild(document.getElementById(data));
+
+
+
+  }
 </script>
+
+
+
+
 
 </html>
