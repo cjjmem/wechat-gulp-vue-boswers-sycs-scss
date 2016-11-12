@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "syncs": "browser-sync start --server  --files **/*.html",
+    "syncs": "browser-sync start --server  --files **/*.html **/*.scss",
     "build": "gulp"
   },
   "author": "cjjmem",
@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.10",
     "vue": "^1.0.26"
   },
   "dependencies": {}

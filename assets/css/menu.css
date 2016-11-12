@@ -1,2 +1,6 @@
-.wechat-menu .child-menu {
-  border: 1px solid #000000; }
+.wechat-menu .main-menu {
+  border: 1px solid #000; }
+  .wechat-menu .main-menu span {
+    border-right: 1px solid #000; }
+    .wechat-menu .main-menu span:nth-last-child(1) {
+      border-right: transparent; }

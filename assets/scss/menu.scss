@@ -3,11 +3,24 @@
 .wechat-menu{
 
   .express{
-    height: 700px;
   }
 
-  .child-menu{
-    border: 1px solid #000000;
+  .main-menu{
+    border: 1px solid #000;
+    span{
+      border-right:1px solid #000 ;
+      &:nth-last-child(1){
+        border-right:transparent;
+      }
+    }
+  }
+
+  .sub-menu{
 
   }
+
+
+
+
+
 }
