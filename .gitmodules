@@ -1,0 +1,4 @@
+[submodule "dist2"]
+	path = dist2
+	url = https://github.com/cjjmem/wechat-submodule.git
+	branch = master
